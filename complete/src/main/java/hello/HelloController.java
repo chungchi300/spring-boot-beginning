@@ -1,7 +1,8 @@
 package hello;
 
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class HelloController {
@@ -10,5 +11,11 @@ public class HelloController {
     public String index() {
         return "Greetings from Spring Boot!Jeff Testing-double";
     }
-    
+    @RequestMapping("/yolo")
+    public String yolo(ModelMap modelMap) {
+        modelMap.addAttribute("name","yolo");
+
+        return "yolo";
+    }
+
 }
